@@ -609,50 +609,175 @@
 
 <footer>
 
-    <div class="footer-top">
+    /* =========================
+   ZEALICON - PREMIUM FOOTER
+   ========================= */
 
-        <div>
+footer {
+    background: #111925;
+    color: #ffffff;
+    padding: 80px 7% 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
 
-            <a href="#home" class="footer-brand">
-                ZEALICON
-            </a>
+/* Main footer area */
+.footer-top {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr;
+    gap: 70px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 70px;
+}
 
-            <p>
-                Creative Production Studio
-            </p>
+/* Brand */
+.footer-brand {
+    display: inline-block;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 18px;
+}
 
-        </div>
+.footer-top > div:first-child p {
+    color: #929aa7;
+    font-size: 16px;
+    line-height: 1.7;
+    max-width: 300px;
+    margin: 0;
+}
 
+/* Navigation */
+.footer-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
 
-        <div class="footer-nav">
+.footer-nav a {
+    color: #aeb5bf;
+    text-decoration: none;
+    font-size: 15px;
+    transition: all 0.3s ease;
+}
 
-            <a href="#about">About Us</a>
-            <a href="#services">Services</a>
-            <a href="#work">Our Work</a>
-            <a href="#reviews">Reviews</a>
-            <a href="#contact">Contact</a>
+.footer-nav a:hover {
+    color: #d4a84f;
+    transform: translateX(5px);
+}
 
-        </div>
+/* Contact */
+.footer-contact {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+}
 
+.footer-contact span {
+    color: #d4a84f;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 8px;
+}
 
-        <div class="footer-contact">
+.footer-contact a {
+    color: #c3c9d1;
+    text-decoration: none;
+    font-size: 15px;
+    transition: color 0.3s ease;
+}
 
-            <span>GET IN TOUCH</span>
+.footer-contact a:hover {
+    color: #ffffff;
+}
 
-            <a href="mailto:hello@zealicon.com">
-                hello@zealicon.com
-            </a>
+/* Bottom section */
+.footer-bottom {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 25px;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
 
-            <a href="tel:+919999999999">
-                +91 99999 99999
-            </a>
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
 
-        </div>
+.footer-bottom span {
+    color: #707987;
+    font-size: 13px;
+    line-height: 1.6;
+}
 
-    </div>
+/* =========================
+   MOBILE
+   ========================= */
 
+@media (max-width: 768px) {
 
-    <div class="footer-bottom">
+    footer {
+        padding: 60px 30px 25px;
+    }
+
+    .footer-top {
+        grid-template-columns: 1fr;
+        gap: 45px;
+        padding-bottom: 50px;
+    }
+
+    .footer-brand {
+        font-size: 28px;
+    }
+
+    .footer-top > div:first-child p {
+        font-size: 15px;
+        max-width: 280px;
+    }
+
+    .footer-nav {
+        gap: 13px;
+    }
+
+    .footer-contact {
+        gap: 12px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+
+    footer {
+        padding: 50px 24px 22px;
+    }
+
+    .footer-top {
+        gap: 38px;
+    }
+
+    .footer-brand {
+        font-size: 26px;
+    }
+
+    .footer-nav a,
+    .footer-contact a {
+        font-size: 14px;
+    }
+
+    .footer-bottom span {
+        font-size: 12px;
+    }
+}
 
         <span>
             © 2026 Zealicon. All Rights Reserved.
