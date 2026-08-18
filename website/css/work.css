@@ -1,0 +1,776 @@
+/* =========================================================
+   ZEALICON — OUR WORK
+   Editorial / Vintage Photography Archive
+========================================================= */
+/* =========================================================
+   PAGE VARIABLES
+========================================================= */
+:root {
+    --work-paper: #eee7dc;
+    --work-paper-dark: #dfd4c4;
+    --work-ink: #20201d;
+    --work-muted: #77736c;
+    --work-red: #8e3026;
+    --work-gold: #b18a50;
+    --work-line: rgba(32, 32, 29, .18);
+}
+/* =========================================================
+   GLOBAL
+========================================================= */
+body {
+    background: var(--work-paper);
+    color: var(--work-ink);
+}
+/* =========================================================
+   NAVBAR
+========================================================= */
+.navbar {
+    color: var(--work-ink);
+    background: rgba(238, 231, 220, .92);
+}
+.navbar.scrolled {
+    color: var(--work-ink);
+    background: rgba(238, 231, 220, .96);
+}
+/* Active navigation */
+.main-nav a.active {
+    color: var(--work-red);
+}
+.main-nav a.active::after {
+    width: 100%;
+}
+/* =========================================================
+   HERO
+========================================================= */
+.work-hero {
+    min-height: 760px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 160px 7vw 100px;
+    overflow: hidden;
+    background:
+        radial-gradient(
+            circle at 80% 30%,
+            rgba(177, 138, 80, .14),
+            transparent 30%
+        ),
+        var(--work-paper-dark);
+}
+/* subtle paper texture */
+.work-hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: .12;
+    background-image:
+        repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 3px,
+            rgba(0,0,0,.05) 4px
+        );
+}
+.work-hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+}
+.archive-label {
+    display: inline-block;
+    margin-bottom: 35px;
+    color: var(--work-red);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 3px;
+}
+.work-hero h1 {
+    font-family: "DM Serif Display", serif;
+    font-size: clamp(70px, 9vw, 150px);
+    line-height: .88;
+    font-weight: 400;
+    letter-spacing: -5px;
+}
+.work-hero h1 em {
+    color: var(--work-red);
+    font-weight: 400;
+}
+.work-hero p {
+    max-width: 500px;
+    margin-top: 45px;
+    color: var(--work-muted);
+    font-size: 14px;
+    line-height: 1.9;
+}
+/* Hero number */
+.hero-number {
+    position: absolute;
+    right: 7vw;
+    top: 150px;
+    color: rgba(32,32,29,.14);
+    font-family: "DM Serif Display", serif;
+    font-size: 180px;
+    line-height: 1;
+}
+/* =========================================================
+   VINTAGE CAMERA GRAPHIC
+========================================================= */
+.hero-camera {
+    position: absolute;
+    right: 10%;
+    bottom: 80px;
+    width: 330px;
+    z-index: 3;
+    transform: rotate(-8deg);
+}
+.camera-frame {
+    width: 330px;
+    height: 190px;
+    position: relative;
+    border-radius: 18px;
+    background:
+        linear-gradient(
+            145deg,
+            #393733,
+            #171716
+        );
+    border: 7px solid #282724;
+    box-shadow:
+        20px 25px 40px rgba(0,0,0,.25);
+}
+.camera-frame::before {
+    content: "";
+    position: absolute;
+    left: 40px;
+    top: -30px;
+    width: 90px;
+    height: 35px;
+    border-radius: 8px 8px 0 0;
+    background: #252421;
+}
+.camera-frame::after {
+    content: "";
+    position: absolute;
+    right: 30px;
+    top: 20px;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: var(--work-red);
+}
+.camera-lens {
+    position: absolute;
+    left: 105px;
+    top: 35px;
+    width: 115px;
+    height: 115px;
+    border-radius: 50%;
+    border: 12px solid #77736c;
+    background:
+        radial-gradient(
+            circle,
+            #111 20%,
+            #353535 22%,
+            #111 45%,
+            #555 48%,
+            #151515 70%
+        );
+    box-shadow:
+        inset 0 0 15px #000
+        0 5px 15px rgba(0,0,0,.5);
+}
+.hero-camera > span {
+    display: block;
+    margin-top: 18px;
+    color: var(--work-muted);
+    font-size: 8px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    text-align: center;
+}
+/* =========================================================
+   INTRO
+========================================================= */
+.archive-intro {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 80px;
+    padding: 130px 7vw;
+    border-bottom: 1px solid var(--work-line);
+}
+.archive-intro-label,.section-label-custom {
+    color: var(--work-red);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2.5px;
+}
+.archive-intro-content {
+    max-width: 850px;
+}
+.archive-intro h2 {
+    max-width: 800px;
+    font-family: "DM Serif Display", serif;
+    font-size: clamp(50px, 6vw, 90px);
+    font-weight: 400;
+    line-height: .95;
+    letter-spacing: -2px;
+}
+.archive-intro h2 em {
+    color: var(--work-red);
+}
+.archive-intro p {
+    max-width: 550px;
+    margin-top: 35px;
+    color: var(--work-muted);
+    font-size: 14px;
+    line-height: 1.9;
+}
+/* =========================================================
+   PORTFOLIO
+========================================================= */
+.portfolio-section {
+    padding: 130px 7vw;
+}
+.portfolio-top {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 80px;
+    align-items: end;
+}
+.portfolio-top h2 {
+    margin-top: 20px;
+    font-family: "DM Serif Display", serif;
+    font-size: clamp(50px, 6vw, 90px);
+    line-height: .95;
+    font-weight: 400;
+}
+.portfolio-top h2 em {
+    color: var(--work-red);
+}
+.portfolio-description {
+    padding-bottom: 5px;
+}
+.portfolio-description p {
+    max-width: 420px;
+    color: var(--work-muted);
+    font-size: 13px;
+    line-height: 1.8;
+}
+/* =========================================================
+   FILTER BUTTONS
+========================================================= */
+.portfolio-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 60px 0 50px;
+}
+.filter-button {
+    padding: 12px 20px;
+    border: 1px solid var(--work-line);
+    border-radius: 100px;
+    background: transparent;
+    color: var(--work-ink);
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: .3s ease;
+}
+.filter-button:hover {
+    border-color: var(--work-red);
+    color: var(--work-red);
+}
+.filter-button.active {
+    background: var(--work-ink);
+    border-color: var(--work-ink);
+    color: var(--work-paper);
+}
+/* =========================================================
+   PORTFOLIO GRID
+========================================================= */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 70px 30px;
+}
+.portfolio-card {
+    transition:
+        opacity .35s ease,
+        transform .35s ease;
+}
+.portfolio-card.hidden {
+    display: none;
+}
+.portfolio-image {
+    position: relative;
+    overflow: hidden;
+    background: #c9c0b2;
+}
+.portfolio-card:nth-child(1) .portfolio-image {
+    aspect-ratio: 1.45 / 1;
+}
+.portfolio-card:not(:nth-child(1)) .portfolio-image {
+    aspect-ratio: 1 / 1;
+}
+.portfolio-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition:
+        transform .8s cubic-bezier(.2,.7,.2,1),
+        filter .5s ease;
+}
+/* =========================================================
+   VINTAGE IMAGE TREATMENT
+========================================================= */
+.portfolio-card .portfolio-image img {
+    filter:
+        sepia(.12)
+        contrast(.96)
+        saturate(.82);
+}
+.portfolio-card:hover .portfolio-image img {
+    transform: scale(1.045);
+    filter:
+        sepia(.22)
+        contrast(1.02)
+        saturate(.9);
+}
+/* =========================================================
+   IMAGE OVERLAY
+========================================================= */
+.image-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding: 25px;
+    background:
+        linear-gradient(
+            to top,
+            rgba(15,15,14,.75),
+            transparent 50%
+        );
+    color: white;
+    opacity: 0;
+    transition: .4s ease;
+}
+.portfolio-card:hover .image-overlay {
+    opacity: 1;
+}
+.image-overlay span {
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+.image-overlay strong {
+    font-size: 20px;
+}
+/* =========================================================
+   PROJECT INFORMATION
+========================================================= */
+.portfolio-info {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    padding: 22px 0;
+    border-bottom: 1px solid var(--work-line);
+}
+.project-type {
+    display: block;
+    margin-bottom: 9px;
+    color: var(--work-red);
+    font-size: 8px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+.portfolio-info h3 {
+    font-family: "DM Serif Display", serif;
+    font-size: 26px;
+    font-weight: 400;
+}
+.project-number {
+    color: var(--work-muted);
+    font-family: "DM Serif Display", serif;
+    font-size: 22px;
+}
+/* =========================================================
+   ARCHIVE CARD
+========================================================= */
+.archive-card {
+    position: relative;
+}
+.archive-card .portfolio-image {
+    background: #c7b69d;
+}
+.archive-stamp {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    padding: 8px 13px;
+    border: 1px solid rgba(142,48,38,.7);
+    color: var(--work-red);
+    font-size: 8px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    transform: rotate(-6deg);
+}
+.archive-card img {
+    filter:
+        sepia(.6)
+        grayscale(.25)
+        contrast(1.05) !important;
+}
+/* =========================================================
+   WIDE PROJECT
+========================================================= */
+.portfolio-wide {
+    grid-column: 1 / -1;
+}
+.portfolio-wide .portfolio-image {
+    aspect-ratio: 2.2 / 1;
+}
+.film-strip-label {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    padding: 8px 12px;
+    background: rgba(0,0,0,.7);
+    color: white;
+    font-size: 8px;
+    letter-spacing: 2px;
+}
+/* =========================================================
+   CAMERA STORY
+========================================================= */
+.camera-story {
+    display: grid;
+    grid-template-columns: 1.15fr 1fr;
+    min-height: 700px;
+    background: #20201d;
+    color: white;
+}
+.camera-story-image {
+    min-height: 600px;
+    overflow: hidden;
+}
+.camera-story-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter:
+        sepia(.5)
+        grayscale(.15)
+        contrast(1.1);
+}
+.camera-story-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 100px 8vw 100px 7vw;
+}
+.camera-story-content .section-label-custom {
+    color: #c9a86d;
+}
+.camera-story h2 {
+    margin-top: 25px;
+    font-family: "DM Serif Display", serif;
+    font-size: clamp(60px, 7vw, 100px);
+    line-height: .9;
+    font-weight: 400;
+}
+.camera-story h2 em {
+    color: #c9a86d;
+}
+.camera-story-content > p {
+    max-width: 480px;
+    margin-top: 35px;
+    color: rgba(255,255,255,.58);
+    font-size: 13px;
+    line-height: 1.9;
+}
+.camera-specs {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 500px;
+    margin-top: 55px;
+    padding-top: 25px;
+    border-top: 1px solid rgba(255,255,255,.15);
+}
+.camera-specs div {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.camera-specs span {
+    color: rgba(255,255,255,.4);
+    font-size: 7px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+.camera-specs strong {
+    color: white;
+    font-size: 11px;
+    letter-spacing: 1px;
+}
+/* =========================================================
+   PROCESS
+========================================================= */
+.process-section {
+    padding: 130px 7vw;
+}
+.process-heading {
+    margin-top: 25px;
+    margin-bottom: 80px;
+}
+.process-heading h2 {
+    max-width: 800px;
+    font-family: "DM Serif Display", serif;
+    font-size: clamp(50px, 6vw, 90px);
+    line-height: .95;
+    font-weight: 400;
+}
+.process-heading em {
+    color: var(--work-red);
+}
+.process-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-top: 1px solid var(--work-line);
+}
+.process-item {
+    min-height: 300px;
+    padding: 35px 30px 30px 0;
+    border-right: 1px solid var(--work-line);
+}
+.process-item:not(:first-child) {
+    padding-left: 30px;
+}
+.process-item:last-child {
+    border-right: none;
+}
+.process-item > span {
+    color: var(--work-red);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+.process-item h3 {
+    margin-top: 65px;
+    font-family: "DM Serif Display", serif;
+    font-size: 30px;
+    font-weight: 400;
+}
+.process-item p {
+    max-width: 230px;
+    margin-top: 15px;
+    color: var(--work-muted);
+    font-size: 11px;
+    line-height: 1.8;
+}
+/* =========================================================
+   CTA
+========================================================= */
+.work-cta {
+    padding: 160px 7vw;
+    background: var(--work-red);
+    color: white;
+    text-align: center;
+}
+.work-cta > div {
+    max-width: 950px;
+    margin: auto;
+}
+.work-cta > div > span {
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 3px;
+}
+.work-cta h2 {
+    margin: 25px 0 45px;
+    font-family: "DM Serif Display", serif;
+    font-size: clamp(55px, 7vw, 105px);
+    line-height: .9;
+    font-weight: 400;
+}
+.work-cta h2 em {
+    color: #ead5a8;
+}
+.work-cta .btn-primary {
+    background: white;
+    color: var(--work-ink);
+}
+.work-cta .btn-primary:hover {
+    background: var(--work-ink);
+    color: white;
+}
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+@media (max-width: 1000px) {
+    .hero-camera {
+        right: 5%;
+        opacity: .5;
+    }
+    .archive-intro {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    .portfolio-top {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    .camera-story {
+        grid-template-columns: 1fr;
+    }
+    .camera-story-image {
+        min-height: 500px;
+    }
+    .process-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .process-item:nth-child(2) {
+        border-right: none;
+    }
+}
+@media (max-width: 700px) {
+    .work-hero {
+        min-height: 680px;
+        padding: 140px 6% 80px;
+    }
+    .work-hero h1 {
+        font-size: 68px;
+        letter-spacing: -3px;
+    }
+    .hero-number {
+        font-size: 110px;
+        top: 120px;
+        right: 5%;
+    }
+    .hero-camera {
+        width: 230px;
+        right: 4%;
+        bottom: 50px;
+        opacity: .3;
+    }
+    .camera-frame {
+        width: 230px;
+        height: 135px;
+    }
+    .camera-lens {
+        width: 80px;
+        height: 80px;
+        left: 72px;
+        top: 22px;
+    }
+    .portfolio-section,.process-section {
+        padding: 90px 6%;
+    }
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+    .portfolio-wide {
+        grid-column: auto;
+    }
+    .portfolio-wide .portfolio-image {
+        aspect-ratio: 1 / 1;
+    }
+    .camera-story-content {
+        padding: 90px 6%;
+    }
+    .camera-specs {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .process-grid {
+        grid-template-columns: 1fr;
+    }
+    .process-item,.process-item:not(:first-child) {
+        min-height: auto;
+        padding: 30px 0;
+        border-right: none;
+        border-bottom: 1px solid var(--work-line);
+    }
+    .process-item h3 {
+        margin-top: 35px;
+    }
+    .work-cta {
+        padding: 110px 6%;
+    }
+}
+/* =========================================================
+   SCROLL REVEAL
+========================================================= */
+.reveal {
+    opacity: 0;
+    transform: translateY(35px);
+    transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1);
+}
+.reveal.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+/* =========================================================
+   LIGHTBOX
+========================================================= */
+.work-lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 5000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    background: rgba(15, 15, 14, .94);
+    backdrop-filter: blur(10px);
+}
+.lightbox {
+    position: relative;
+    max-width: 90vw;
+    max-height: 88vh;
+}
+.work-lightbox img {
+    display: block;
+    max-width: 90vw;
+    max-height: 88vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, .5);
+}
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    width: 45px;
+    height: 45px;
+    border: 1px solid rgba(255, 255, 255, .5);
+    border-radius: 50%;
+    background: transparent;
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+    z-index: 10;
+}
+.lightbox-close:hover {
+    color: #c9a86d;
+}
+@media (max-width: 600px) {
+    .work-lightbox {
+        padding: 20px;
+    }
+    .work-lightbox img {
+        max-width: 94vw;
+        max-height: 80vh;
+    }
+    .lightbox-close {
+        top: 20px;
+        right: 20px;
+        font-size: 35px;
+    }
+}
