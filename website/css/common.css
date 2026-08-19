@@ -267,117 +267,327 @@ select {
     cursor: pointer;
 }
 
+/* =========================================================
+   ZEALICON — VINTAGE / EDITORIAL FOOTER
+========================================================= */
 
 footer {
-    padding: 75px 7vw 25px;
+    position: relative;
 
-    background: var(--navy);
-    color: white;
+    background: var(--work-paper, #eee7dc);
+    color: var(--work-ink, #20201d);
+
+    border-top: 1px solid var(--work-line, rgba(32, 32, 29, .18));
+
+    overflow: hidden;
 }
 
+
+/* =========================================================
+   SUBTLE PAPER TEXTURE
+========================================================= */
+
+footer::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    pointer-events: none;
+
+    opacity: .08;
+
+    background-image:
+        repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 3px,
+            rgba(0, 0, 0, .06) 4px
+        );
+}
+
+
+/* =========================================================
+   FOOTER TOP
+========================================================= */
 
 .footer-top {
-    display: grid;
-    grid-template-columns: 1.5fr 1fr 1fr;
-    gap: 60px;
+    position: relative;
+    z-index: 1;
 
-    padding-bottom: 65px;
+    display: grid;
+
+    grid-template-columns: 1.5fr 1fr 1fr;
+
+    gap: 80px;
+
+    padding: 90px 7vw 75px;
+
+    border-bottom: 1px solid
+        var(--work-line, rgba(32, 32, 29, .18));
 }
 
+
+/* =========================================================
+   BRAND
+========================================================= */
 
 .footer-brand {
-    font-size: 28px;
-    font-weight: 800;
+    display: inline-block;
+
+    color: var(--work-ink, #20201d);
+
+    font-family: "DM Serif Display", serif;
+
+    font-size: 48px;
+
+    font-weight: 400;
+
+    line-height: .9;
+
     letter-spacing: -1px;
+
+    text-decoration: none;
+
+    transition: color .3s ease;
 }
 
 
-.footer-top p {
-    margin-top: 8px;
-
-    color: rgba(255,255,255,.5);
-
-    font-size: 11px;
+.footer-brand:hover {
+    color: var(--work-red, #8e3026);
 }
 
 
-.footer-nav,
+.footer-top > div:first-child p {
+    margin-top: 15px;
+
+    color: var(--work-muted, #77736c);
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   FOOTER NAVIGATION
+========================================================= */
+
+.footer-nav {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 13px;
+
+    padding-top: 5px;
+}
+
+
+.footer-nav a {
+    position: relative;
+
+    width: fit-content;
+
+    color: var(--work-ink, #20201d);
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    text-transform: uppercase;
+
+    text-decoration: none;
+
+    transition:
+        color .3s ease,
+        transform .3s ease;
+}
+
+
+.footer-nav a::before {
+    content: "";
+
+    position: absolute;
+
+    left: -18px;
+
+    top: 50%;
+
+    width: 0;
+    height: 1px;
+
+    background: var(--work-red, #8e3026);
+
+    transform: translateY(-50%);
+
+    transition: width .3s ease;
+}
+
+
+.footer-nav a:hover {
+    color: var(--work-red, #8e3026);
+
+    transform: translateX(5px);
+}
+
+
+.footer-nav a:hover::before {
+    width: 10px;
+}
+
+
+/* =========================================================
+   FOOTER CONTACT
+========================================================= */
+
 .footer-contact {
     display: flex;
+
     flex-direction: column;
+
+    align-items: flex-start;
+
     gap: 12px;
-}
-
-
-.footer-nav a,
-.footer-contact a {
-    color: rgba(255,255,255,.65);
-    font-size: 11px;
-}
-
-
-.footer-nav a:hover,
-.footer-contact a:hover {
-    color: var(--peach);
 }
 
 
 .footer-contact > span {
     margin-bottom: 5px;
 
-    color: var(--gold);
+    color: var(--work-red, #8e3026);
 
     font-size: 9px;
+
     font-weight: 800;
-    letter-spacing: 2px;
+
+    letter-spacing: 2.5px;
 }
 
+
+.footer-contact a {
+    color: var(--work-ink, #20201d);
+
+    font-family: "DM Serif Display", serif;
+
+    font-size: 16px;
+
+    font-weight: 400;
+
+    text-decoration: none;
+
+    transition: color .3s ease;
+}
+
+
+.footer-contact a:hover {
+    color: var(--work-red, #8e3026);
+}
+
+
+/* =========================================================
+   FOOTER BOTTOM
+========================================================= */
 
 .footer-bottom {
+    position: relative;
+    z-index: 1;
+
     display: flex;
+
     justify-content: space-between;
 
-    padding-top: 20px;
+    align-items: center;
 
-    border-top: 1px solid rgba(255,255,255,.12);
+    gap: 30px;
 
-    color: rgba(255,255,255,.4);
+    padding: 22px 7vw;
 
-    font-size: 9px;
+    color: var(--work-muted, #77736c);
+
+    font-size: 8px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+
+    text-transform: uppercase;
 }
 
 
-@media (max-width: 900px) {
+.footer-bottom span:last-child {
+    color: var(--work-red, #8e3026);
+}
 
-    .main-nav,
-    .nav-cta {
-        display: none;
+
+/* =========================================================
+   RESPONSIVE — TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .footer-top {
+        grid-template-columns: 1fr 1fr;
+
+        gap: 60px;
     }
 
-    .menu-toggle {
-        display: block;
+    .footer-top > div:first-child {
+        grid-column: 1 / -1;
     }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE — MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
 
     .footer-top {
         grid-template-columns: 1fr;
+
+        gap: 45px;
+
+        padding: 70px 6% 55px;
     }
 
-}
 
-
-@media (max-width: 600px) {
-
-    .section {
-        padding: 85px 6%;
+    .footer-top > div:first-child {
+        grid-column: auto;
     }
 
-    .navbar {
-        padding: 0 6%;
+
+    .footer-brand {
+        font-size: 42px;
     }
+
+
+    .footer-nav {
+        gap: 16px;
+    }
+
+
+    .footer-contact a {
+        font-size: 12px;
+    }
+
 
     .footer-bottom {
         flex-direction: column;
+
+        align-items: flex-start;
+
         gap: 10px;
+
+        padding: 20px 6%;
     }
 
 }
