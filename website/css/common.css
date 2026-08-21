@@ -141,7 +141,7 @@ select {
     left: 0;
 
     width: 100%;
-    height: 88px;
+    height: 110px;
 
     padding: 0 7vw;
 
@@ -158,7 +158,7 @@ select {
 
 
 .navbar.scrolled {
-    height: 72px;
+    height: 110px;
 
     color: var(--navy);
 
@@ -181,14 +181,8 @@ select {
 .main-nav {
     display: flex;
     align-items: center;
+    gap: 25px;
 }
-.brand-logo{
-    width: 90px;
-    height: auto;
-    display:block;
-    object-fit: contain;
-}
-
 .main-nav a {
     position: relative;
 
@@ -368,5 +362,11 @@ footer {
         flex-direction: column;
         gap: 10px;
     }
-
+}
+/*Logo size*/
+.brand-logo{
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    dislay: block;
 }
