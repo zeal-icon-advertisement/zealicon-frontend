@@ -18,7 +18,7 @@ if (inquiryForm) {
             formMessage.textContent =
                 "Please fill in all required fields.";
 
-            formMessage.style.color = "#E76F51";
+            formMessage.style.color = "#8e3026";
 
             return;
         }
