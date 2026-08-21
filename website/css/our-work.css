@@ -1,0 +1,41 @@
+.work-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 7vw;
+    border-bottom: 1px solid var(--border);
+}
+
+.brand { display: flex; flex-direction: column; }
+.brand-name { font-weight: 800; letter-spacing: 2px; font-size: 15px; }
+.brand-tagline { color: var(--muted); font-size: 8px; font-weight: 700; letter-spacing: 1.7px; margin-top: 3px; }
+.back-link { font-size: 11px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; }
+.back-link:hover { color: var(--coral); }
+
+.work-hero { max-width: 850px; padding: 105px 7vw 75px; }
+.eyebrow { color: var(--coral); font-size: 11px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; }
+.work-hero h1, .work-cta h2 { font-family: "DM Serif Display", serif; font-size: clamp(52px, 8vw, 100px); font-weight: 400; line-height: .94; letter-spacing: -2px; margin: 22px 0 28px; }
+.work-hero em { color: var(--coral); }
+.work-hero > p:last-child { color: var(--muted); font-size: 16px; line-height: 1.8; max-width: 580px; }
+
+.portfolio { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; padding: 0 7vw 100px; }
+.portfolio-card { min-height: 470px; position: relative; overflow: hidden; color: white; background: var(--navy); }
+.portfolio-card.tall { min-height: 620px; }
+.portfolio-card.wide { grid-column: span 2; min-height: 500px; }
+.portfolio-card::after { content: ""; position: absolute; inset: 0; background: linear-gradient(transparent 35%, rgba(23,32,42,.82)); }
+.portfolio-card img { height: 100%; object-fit: cover; position: absolute; inset: 0; transition: transform .6s ease; }
+.portfolio-card:hover img { transform: scale(1.04); }
+.portfolio-card div { position: absolute; z-index: 1; left: 36px; right: 36px; bottom: 32px; }
+.portfolio-card p { font-size: 10px; font-weight: 800; letter-spacing: 1.8px; text-transform: uppercase; margin-bottom: 9px; }
+.portfolio-card h2 { font-family: "DM Serif Display", serif; font-weight: 400; font-size: clamp(28px, 3vw, 42px); line-height: 1; }
+
+.work-cta { background: var(--sage); text-align: center; padding: 110px 7vw; }
+.work-cta h2 { font-size: clamp(45px, 6vw, 76px); margin-left: auto; margin-right: auto; max-width: 700px; }
+
+@media (max-width: 650px) {
+    .work-header { padding: 20px 7vw; }
+    .portfolio { grid-template-columns: 1fr; gap: 16px; padding-bottom: 70px; }
+    .portfolio-card, .portfolio-card.tall, .portfolio-card.wide { min-height: 430px; grid-column: auto; }
+    .portfolio-card div { left: 23px; right: 23px; bottom: 24px; }
+    .work-hero { padding-top: 75px; }
+}
