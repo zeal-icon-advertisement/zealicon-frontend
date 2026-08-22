@@ -580,7 +580,8 @@
     margin-bottom: 65px;
 }
 
-.section-heading>p {
+.section-heading>p,
+.services-heading-info>p {
     max-width: 330px;
 
     color: var(--home-muted);
@@ -1603,4 +1604,11 @@ fieldset.form-group legend {
     display: flex;
     justify-content: center;
     margin-top: 42px;
+}
+
+.services-heading-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 25px;
 }

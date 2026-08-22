@@ -1,21 +1,32 @@
-// Reveal each service card as it enters the viewport.
+const filterButtons = document.querySelectorAll('.filter-button');
 const serviceCards = document.querySelectorAll('.service-card');
 
-const revealCard = (entries, observer) => {
-    entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
-
-        entry.target.classList.add('is-visible');
-        observer.unobserve(entry.target);
+filterButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+        filterButtons.forEach((item) => item.classList.remove('active'));
+        button.classList.add('active');
+        const filter = button.dataset.filter;
+        serviceCards.forEach((card) => {
+            card.classList.toggle('hidden', filter !== 'all' && card.dataset.category !== filter);
+        });
     });
-};
+});
 
+const revealElements = document.querySelectorAll('.service-card, .process-item, .services-intro-content');
 if ('IntersectionObserver' in window) {
-    const observer = new IntersectionObserver(revealCard, { threshold: 0.12 });
-    serviceCards.forEach((card, index) => {
-        card.style.transitionDelay = `${index * 90}ms`;
-        observer.observe(card);
+    const observer = new IntersectionObserver((entries, activeObserver) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('revealed');
+                activeObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.12 });
+
+    revealElements.forEach((element) => {
+        element.classList.add('reveal');
+        observer.observe(element);
     });
 } else {
-    serviceCards.forEach((card) => card.classList.add('is-visible'));
+    revealElements.forEach((element) => element.classList.add('revealed'));
 }
