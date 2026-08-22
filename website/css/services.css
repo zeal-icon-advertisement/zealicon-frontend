@@ -1,0 +1,126 @@
+/* Services page */
+.navbar {
+    position: sticky;
+    height: 74px;
+    padding: 0 7vw;
+    background: #20201d;
+    color: #fff;
+}
+
+.navbar nav {
+    display: flex;
+    gap: 28px;
+}
+
+.navbar a {
+    position: relative;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.3px;
+    text-transform: uppercase;
+}
+
+.navbar a::after {
+    position: absolute;
+    right: 0;
+    bottom: -8px;
+    left: 0;
+    height: 2px;
+    background: #b18a50;
+    content: "";
+    transform: scaleX(0);
+    transition: transform .25s ease;
+}
+
+.navbar a:hover::after,
+.navbar a[aria-current="page"]::after {
+    transform: scaleX(1);
+}
+
+.services-page {
+    min-height: calc(100vh - 74px);
+    padding: 84px 7vw 100px;
+    background: #eee7dc;
+}
+
+.services-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 26px;
+}
+
+.service-card {
+    overflow: hidden;
+    background: #fffdf8;
+    border: 1px solid rgba(32, 32, 29, .14);
+    box-shadow: 0 16px 38px rgba(32, 32, 29, .08);
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity .55s ease, transform .55s ease, box-shadow .3s ease;
+}
+
+.service-card.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.service-card:hover {
+    box-shadow: 0 22px 45px rgba(32, 32, 29, .17);
+}
+
+.service-card img {
+    height: 270px;
+    object-fit: cover;
+    transition: transform .5s ease;
+}
+
+.service-card:hover img {
+    transform: scale(1.05);
+}
+
+.service-content {
+    min-height: 215px;
+    padding: 31px 34px 34px;
+}
+
+.service-number {
+    display: block;
+    margin-bottom: 18px;
+    color: #8e3026;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.service-content h2 {
+    margin-bottom: 13px;
+    color: #20201d;
+    font-family: Georgia, serif;
+    font-size: clamp(23px, 2.3vw, 31px);
+    font-weight: 400;
+    line-height: 1.1;
+}
+
+.service-content p {
+    max-width: 42ch;
+    color: #77736c;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+footer {
+    padding: 28px 7vw;
+    background: #20201d;
+    color: #eee7dc;
+    font-size: 12px;
+    letter-spacing: .6px;
+}
+
+@media (max-width: 720px) {
+    .services-page { padding: 52px 6vw 70px; }
+    .services-container { grid-template-columns: 1fr; gap: 20px; }
+    .service-card img { height: 240px; }
+    .service-content { min-height: auto; padding: 26px; }
+}
