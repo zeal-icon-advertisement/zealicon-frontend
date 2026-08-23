@@ -1,0 +1,326 @@
+:root {
+    --about-paper: #f0e8dc;
+    --about-paper-dark: #ded0be;
+    --about-ink: #20201d;
+    --about-muted: #716b62;
+    --about-red: #96392e;
+    --about-line: rgba(32, 32, 29, .18);
+}
+
+body {
+    background: var(--about-paper);
+    color: var(--about-ink);
+}
+
+.navbar {
+    color: var(--about-ink);
+    background: rgba(240, 232, 220, .94);
+}
+
+.navbar.scrolled {
+    color: var(--about-ink);
+    background: rgba(240, 232, 220, .98);
+}
+
+.navbar .brand-logo {
+    box-shadow: 0 0 0 1px var(--about-line);
+}
+
+.main-nav a.active {
+    color: var(--about-red);
+}
+
+.main-nav a.active::after {
+    width: 100%;
+}
+
+.about-hero {
+    position: relative;
+    min-height: 700px;
+    padding: 160px 7vw 110px;
+    overflow: hidden;
+    background: radial-gradient(circle at 78% 30%, rgba(150, 57, 46, .1), transparent 27%), var(--about-paper-dark);
+}
+
+.about-hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 710px;
+}
+
+.archive-label,
+.section-label-custom {
+    display: block;
+    color: var(--about-red);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.archive-label {
+    margin-bottom: 32px;
+}
+
+.about-hero h1,
+.about-intro h2,
+.about-cta h2 {
+    font-family: "DM Serif Display", serif;
+    font-weight: 400;
+    line-height: .95;
+    letter-spacing: -2px;
+}
+
+.about-hero h1 {
+    font-size: clamp(58px, 8vw, 124px);
+}
+
+.about-hero h1 em,
+.about-intro h2 em,
+.about-cta h2 em {
+    color: var(--about-red);
+    font-style: italic;
+}
+
+.about-hero p {
+    max-width: 440px;
+    margin-top: 34px;
+    color: var(--about-muted);
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.hero-number {
+    position: absolute;
+    top: 145px;
+    right: 7vw;
+    color: rgba(32, 32, 29, .13);
+    font-family: "DM Serif Display", serif;
+    font-size: 180px;
+    line-height: 1;
+}
+
+.hero-image {
+    position: absolute;
+    right: 8vw;
+    bottom: 0;
+    width: min(34vw, 440px);
+    height: 430px;
+    overflow: hidden;
+    transform: rotate(4deg);
+    box-shadow: 20px 25px 40px rgba(32, 32, 29, .18);
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: sepia(.16) contrast(.96) saturate(.82);
+}
+
+.about-intro,
+.values-section {
+    padding: 130px 7vw;
+}
+
+.about-intro {
+    display: grid;
+    grid-template-columns: .8fr 1.2fr;
+    gap: 8vw;
+}
+
+.about-intro-content {
+    max-width: 700px;
+}
+
+.about-intro h2 {
+    font-size: clamp(50px, 6vw, 86px);
+}
+
+.about-intro p {
+    max-width: 560px;
+    margin-top: 34px;
+    color: var(--about-muted);
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+.values-section {
+    background: var(--about-ink);
+    color: var(--about-paper);
+}
+
+.values-section .section-label-custom {
+    color: #d78b78;
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5vw;
+    margin-top: 72px;
+}
+
+.value-item {
+    border-top: 1px solid rgba(240, 232, 220, .3);
+    padding-top: 22px;
+}
+
+.value-item span {
+    color: #d78b78;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.value-item h3 {
+    margin-top: 42px;
+    font-family: "DM Serif Display", serif;
+    font-size: 35px;
+    font-weight: 400;
+}
+
+.value-item p {
+    max-width: 280px;
+    margin-top: 18px;
+    color: rgba(240, 232, 220, .68);
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.restaurant-section {
+    padding: 130px 7vw;
+    background: var(--about-paper-dark);
+}
+
+.restaurant-heading {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.restaurant-heading h2 {
+    margin: -14px 0 0;
+    font-family: "DM Serif Display", serif;
+    font-size: clamp(52px, 7vw, 100px);
+    font-weight: 400;
+    line-height: .95;
+    letter-spacing: -2px;
+    text-align: right;
+}
+
+.restaurant-heading h2 em {
+    color: var(--about-red);
+    font-style: italic;
+}
+
+.restaurant-videos {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px;
+    align-items: start;
+    margin-top: 72px;
+}
+
+.restaurant-videos video {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 2574 / 3218;
+    object-fit: contain;
+    background: var(--about-ink);
+}
+
+.about-cta {
+    padding: 150px 7vw;
+    background: var(--about-red);
+    color: white;
+}
+
+.about-cta > span {
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.about-cta h2 {
+    margin: 30px 0 42px;
+    font-size: clamp(54px, 7vw, 100px);
+}
+
+.about-cta h2 em {
+    color: #f1c0a9;
+}
+
+.about-cta .btn-primary {
+    border-color: white;
+    background: white;
+    color: var(--about-red);
+}
+
+@media (max-width: 800px) {
+    .about-hero {
+        min-height: 760px;
+        padding-top: 140px;
+    }
+
+    .hero-number {
+        top: 105px;
+        right: 7vw;
+        font-size: 120px;
+    }
+
+    .hero-image {
+        right: 9vw;
+        width: 72vw;
+        height: 330px;
+    }
+
+    .about-intro {
+        grid-template-columns: 1fr;
+        gap: 45px;
+        padding-top: 90px;
+        padding-bottom: 90px;
+    }
+
+    .values-section {
+        padding-top: 90px;
+        padding-bottom: 90px;
+    }
+
+    .values-grid {
+        grid-template-columns: 1fr;
+        gap: 48px;
+        margin-top: 52px;
+    }
+
+    .value-item h3 {
+        margin-top: 28px;
+    }
+
+    .restaurant-section {
+        padding-top: 90px;
+        padding-bottom: 90px;
+    }
+
+    .restaurant-heading {
+        display: block;
+    }
+
+    .restaurant-heading h2 {
+        margin-top: 36px;
+        text-align: left;
+    }
+
+    .restaurant-videos {
+        grid-template-columns: 1fr;
+        gap: 34px;
+        margin-top: 52px;
+    }
+
+    .about-cta {
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+}
