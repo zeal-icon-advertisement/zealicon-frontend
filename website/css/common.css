@@ -168,7 +168,15 @@ select {
 
     box-shadow: 0 8px 30px rgba(23,32,42,.06);
 }
+.navbar.scrolled .brand,
+.navbar.scrolled .main-nav a,
+.navbar.scrolled .nav-cta {
+    color: var(--navy);
+}
 
+.navbar.scrolled .nav-cta {
+    border-color: var(--navy);
+}
 
 .brand {
     display: flex;
