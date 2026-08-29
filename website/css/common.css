@@ -166,7 +166,10 @@ section[id] {
 
     z-index: 1000;
 
-    color: white;
+    /* Keep the navigation readable over every section of the page. */
+    color: var(--navy);
+    background: var(--white);
+    box-shadow: 0 4px 18px rgba(32, 32, 29, .08);
 
     transition: .35s ease;
 }
@@ -177,7 +180,7 @@ section[id] {
 
     color: var(--navy);
 
-    background: rgba(238,231,220,.94);
+    background: var(--white);
 
     backdrop-filter: blur(16px);
 
